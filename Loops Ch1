@@ -1,0 +1,31 @@
+import time
+x = 10
+while x >= 1:
+	print(x)
+	time.sleep(1)
+	x = x - 1
+print ("blast off")
+
+
+
+
+x = 2
+while x <= 20:
+	print(x)
+	x = x + 2
+
+
+
+
+x = 100
+while x >= 0:
+	print (x)
+	x = x - 1
+
+
+
+
+x = 1
+while x <= 10:
+print("the square of ", x, "is", x * x)
+	x =x + 1 
