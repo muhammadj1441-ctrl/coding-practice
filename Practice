@@ -1,0 +1,14 @@
+name = "Muhammad"
+print(f"my name is {name}")
+
+age = 16
+print(f"I am {age} years old")
+
+print("the answer to the sum 6*54 is", 6*54)
+
+PI = 3.14
+radius = 6
+print(f"the area of a circle with a radius of {radius} is {PI * radius * radius}")
+
+name = input("what is you name?")
+print("hi", name)
