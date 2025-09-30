@@ -1,0 +1,28 @@
+from random import *
+headsCount = 0
+while headsCount < 3:
+		coin = randint(1,2)
+		if coin == 1:
+		headsCount = headsCount + 1
+            
+    
+   
+print(headsCount)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if coin == 1:
+#    print("Heads")
+#if coin == 2:
+#    print("Tails")
