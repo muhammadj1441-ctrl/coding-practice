@@ -1,0 +1,36 @@
+name = input("Enter your name to begin ")
+print(f"greetings {name}")
+ready = input("are you ready to begin your adventure")
+if ready == "yes":
+    print("starting adventure...")
+    print("you have been washed up on an island and must escape")
+    print("in the distance there is an abandoned cabin")
+    print("behind you is a damadged boat")
+    advance = input("where would you like to go")
+    if advance == "boat":
+        print("you must explore the island to find the missing peices to repair the boat")
+    if advance == "cabin":
+        print("you are now entering the cabin")
+        room = input("there are 2 rooms one on the right and one on the left choose the room you would like to enter")
+        if room == "left":
+            print("you have entered the room and found a sword")
+        if room == "right":
+            print("you have entered the room and found a hammer")
+            
+        b = input("enter b to turn around")
+        if b == "b":
+            print("a figure had appeared behind you and pinned you into the wall")
+            print(f"Hello {name} I DEMAND YOU PAY ME")
+            print("you reach into your pocket and feal some coins and hand it to the figure")
+            print("your balance is 5 coins")
+            print("the figure is now counting your coins")
+        run = input("it is your chance to run enter run if you want to escape")
+        if run == "run":
+            print("you have made it out of the cabin alive")
+        else:
+            print("you died")
+        
+    
+if ready == "no":
+    print("we will meet again")
+    
