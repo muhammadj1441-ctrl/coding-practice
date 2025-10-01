@@ -1,0 +1,7 @@
+a = 0
+b = 1
+while a >= 0:
+    print(a)
+    a = a + b
+
+#I NEED HELP
