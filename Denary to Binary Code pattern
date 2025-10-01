@@ -1,0 +1,16 @@
+#number = int(input("Enter a number - "))
+#if number % 2 == 1:
+#    print("ODD")
+#else:
+#    print("EVEN")
+
+
+
+value = int(input("Enter a value - "))
+temp = ""
+while value > 0:
+    a = value % 2
+    b = value // 2
+    temp = str(a) + temp
+    value = b
+print(temp)
