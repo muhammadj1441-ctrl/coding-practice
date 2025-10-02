@@ -1,0 +1,40 @@
+import turtle
+
+screen = turtle.Screen
+
+colors = ["red", "blue", "green", "orange", "purple"]
+turtles = []
+
+
+start_y = 316
+
+for i in range(4):
+    t: turtle = turtle.Turtle()
+    t.speed(10)
+    t.shape("turtle")
+    t.color(colors[i])
+    t.penup()
+    t.goto(-800, start_y - i * 200)
+    turtles.append(t)
+
+draw = turtle.Turtle()
+draw.penup()
+draw.goto(721.0, 388.0)
+draw.pendown()
+
+square_size = 20
+rows = 2
+cols = 8
+
+for _ in range(4):
+    draw.penup()
+
+
+#screen = turtle.Screen()
+
+#def get_click_coordinates(x, y):
+#    print(f"You clicked at: ({x}, {y})")
+
+#screen.onscreenclick(get_click_coordinates)
+
+turtle.done()
