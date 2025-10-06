@@ -37,7 +37,7 @@ while not winner:  # keep looping until we find a winner
             break  # stop checking others
 print(f"{winner} has won the race!!!")
 
-
+#t.write("hello, turtle!", align = "centre", font=("arial", 16, "bold"))
 
 #screen = turtle.Screen()
 
@@ -46,5 +46,6 @@ print(f"{winner} has won the race!!!")
 #    print(f"You clicked at: ({x}, {y})")
 
 #screen.onscreenclick(get_click_coordinates)
+
 
 turtle.done()
