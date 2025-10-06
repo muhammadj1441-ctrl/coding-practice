@@ -4,4 +4,11 @@ while a >= 0:
     print(a)
     a = a + b
 
-#I NEED HELP
+
+m = int(input("Enter value for m - "))
+c = int(input("Enter value for c - "))
+
+x = 1
+while x <= 10:
+    print(f"({x},{m*x+c})")
+    x = x+1
