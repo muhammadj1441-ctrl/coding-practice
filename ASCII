@@ -1,0 +1,8 @@
+number = ord("Z")
+key = 5
+value = number + key
+print(number)
+if value >= 90:
+    print(chr(value - 26))
+else:
+    print(chr(value + 26))
