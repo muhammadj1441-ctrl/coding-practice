@@ -1,0 +1,14 @@
+#encryption
+plaintext = input("Enter some text: ")
+key = int(input("Enter a key: "))
+temp = ""
+for pos in range (0,len(plaintext)):
+    num = ord(plaintext[pos]) + key
+    if num > ord("Z"):
+        num = num - 26
+    letter = chr(num)   
+    temp = temp + letter
+    #print(temp)
+print(temp)
+
+#decryption
