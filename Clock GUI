@@ -1,0 +1,19 @@
+from tkinter import *
+import time
+
+
+window = Tk()
+window.title("Digital Clock")
+window.geometry("400x400")
+window.configure(background="lime")
+#window.configure(fg="black")
+window = Label(window, font=("Arial", 50, "bold"))
+window.pack()
+
+def timefunc():
+    clock = time.strftime("%H:%M:%S")
+    window.configure(text=clock)
+    window.after(1000, timefunc)
+
+timefunc()
+
