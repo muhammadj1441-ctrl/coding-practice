@@ -1,0 +1,28 @@
+import tkinter as tk
+from tkinter import ttk
+
+def convert():
+    try:
+        kg = float(kilogram.get())
+        pounds = kg * 2.20462
+        result.config(text=f"{pounds:.2f} lbs")
+    except ValueError:
+        result.config(text="Invalid input")
+
+window = tk.Tk()
+window.title("Weight Converter")
+window.geometry("300x200")
+
+title = ttk.Label(window, text="Kilograms to Pounds", font=("Arial", 14, "bold"))
+title.pack()
+
+kilogram = ttk.Entry(window, justify="center", font=("Arial", 12))
+kilogram.pack()
+
+button = ttk.Button(window, text="Convert", command=convert)
+button.pack()
+
+result = ttk.Label(window, text="0.00 lbs", font=("Arial", 12))
+result.pack()
+
+window.mainloop()
