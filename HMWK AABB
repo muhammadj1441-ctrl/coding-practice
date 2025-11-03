@@ -1,0 +1,18 @@
+enter = input("Enter something:")
+pos = 1
+count = 1
+check = 0
+while pos < len(enter):
+    if enter[pos] == enter[pos - 1]:
+        count = count + 1
+    else:
+        if count < check:
+            pass
+        elif count > check:
+            check = count
+            let = enter[pos-1]
+        #print(check)
+        count = 1
+    pos = pos + 1
+print(let)
+print(check)
