@@ -1,14 +1,15 @@
 board = [["r", "w", "y", "r", "r", "r", "w", "y", "y"],
-         ["w", "w", "y", "r", "r", "r", "y", "y", "w"],
+         ["w", "w", "y", "r", "y", "r", "y", "y", "w"],
          ["r", "y", "y", "w", "r", "r", "w", "y", "w"],
-         ["w", "y", "y", "w", "r", "r", "w", "y", "y"],
+         ["w", "y", "y", "w", "r", "y", "w", "y", "y"],
          ["r", "w", "w", "r", "r", "r", "y", "r", "r"],
-         ["w", "y", "y", "w", "r", "r", "r", "y", "w"],
+         ["w", "y", "y", "w", "w", "r", "r", "y", "w"],
          ["y", "w", "y", "w", "r", "r", "w", "y", "y"],
-         ["y", "w", "y", "w", "r", "r", "w", "y", "w"],
-         ["w", "w", "y", "y", "r", "r", "w", "y", "r"]]
+         ["y", "w", "y", "w", "y", "r", "w", "y", "w"],
+         ["w", "w", "y", "y", "r", "r", "w", "y", "r"],
+         ["w", "r", "y", "w", "r", "y", "w", "r", "y"]]
 
-
+print(board[0][2])
 
 from pygame import *
 
@@ -44,12 +45,17 @@ while endGame == False:
     while row < len(board):
         col = 0
         while col < len(board[row]):
+
+            cx = 55 + row * 65
+            cy = 55 + col * 65
+
+
             if board[row][col] == "r":
-                draw.circle(screen, (255, 0, 0), (x, y), 30)
+                draw.circle(screen, (255, 0, 0), (cx, cy), 30)
             elif board[row][col] == "y":
-                draw.circle(screen, (255, 255, 0), (x, y), 30)
+                draw.circle(screen, (255, 255, 0), (cx, cy), 30)
             elif board[row][col] == "w":
-                draw.circle(screen, (255, 255, 255), (x, y), 30)
+                draw.circle(screen, (255, 255, 255), (cx, cy), 30)
             col = col + 1
         row = row + 1
 
