@@ -55,8 +55,8 @@ while endGame == False:
 	while row < len(board):
 		col = 0
 		while col < len(board[row]):
-			cx = 55 + row * 65
-			cy = 55 + col * 65
+			cy = 55 + row * 65
+			cx = 55 + col * 65
 
 
 			if board[row][col] == "r":
@@ -70,5 +70,6 @@ while endGame == False:
 
 
 	display.flip()
+
 
 
