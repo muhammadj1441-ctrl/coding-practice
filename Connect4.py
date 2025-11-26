@@ -30,38 +30,38 @@ while endGame == False:
 			endGame = True
 		if e.type == KEYDOWN:
 			col_choice = -1
-			if e.key == k_1:
+			if e.key == K_1:
 				print("key 1 pressed")
 				col_choice = 0
-			elif e.key == k_2:
+			elif e.key == K_2:
 				print("key 2 pressed")
 				col_choice = 1
-			elif e.key == k_3:
-				print("key 2 pressed")
+			elif e.key == K_3:
+				print("key 3 pressed")
 				col_choice = 2
-			elif e.key == k_4:
-				print("key 2 pressed")
+			elif e.key == K_4:
+				print("key 4 pressed")
 				col_choice = 3
-			elif e.key == k_5:
-				print("key 2 pressed")
+			elif e.key == K_5:
+				print("key 5 pressed")
 				col_choice = 4
-			elif e.key == k_6:
-				print("key 2 pressed")
+			elif e.key == K_6:
+				print("key 6 pressed")
 				col_choice = 5
-			elif e.key == k_7:
-				print("key 2 pressed")
+			elif e.key == K_7:
+				print("key 7 pressed")
 				col_choice = 6
-			elif e.key == k_8:
-				print("key 2 pressed")
+			elif e.key == K_8:
+				print("key 8 pressed")
 				col_choice = 7
-			elif e.key == k_9:
-				print("key 2 pressed")
+			elif e.key == K_9:
+				print("key 9 pressed")
 				col_choice = 8
-			elif e.key == k_10:
-				print("key 2 pressed")
+			elif e.key == K_0:
+				print("key 10 pressed")
 				col_choice = 9
 				
-			if col_choice != -1:
+			#if col_choice != -1:
 				
 				
 				
