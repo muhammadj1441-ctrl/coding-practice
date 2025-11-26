@@ -1,12 +1,12 @@
-board = [["r", "w", "y", "r", "r", "r", "w", "y", "y"],
-		["w", "w", "y", "r", "y", "r", "y", "y", "w"],
-		["r", "y", "y", "w", "r", "r", "w", "y", "w"],
-		["w", "y", "y", "w", "r", "y", "w", "y", "y"],
-		["r", "w", "w", "r", "r", "r", "y", "r", "r"],
-		["w", "y", "y", "w", "w", "r", "r", "y", "w"],
-		["y", "w", "y", "w", "r", "r", "w", "y", "y"],
-		["y", "w", "y", "w", "y", "r", "w", "y", "w"],
-		["w", "r", "y", "w", "r", "y", "w", "r", "y"]]
+board = [["r", "w", "y", "r", "r", "r", "w", "y", "y", "r"],
+		["w", "w", "y", "r", "y", "r", "y", "y", "w", "w"],
+		["r", "y", "y", "w", "r", "r", "w", "y", "w", "y"],
+		["w", "y", "y", "w", "r", "y", "w", "y", "y", "r"],
+		["r", "w", "w", "r", "r", "r", "y", "r", "r", "w"],
+		["w", "y", "y", "w", "w", "r", "r", "y", "w", "y"],
+		["y", "w", "y", "w", "r", "r", "w", "y", "y", "r"],
+		["y", "w", "y", "w", "y", "r", "w", "y", "w", "w"],
+		["w", "r", "y", "w", "r", "y", "w", "r", "y", "y"]]
 
 print(board[0][2])
 
@@ -22,19 +22,48 @@ screen = display.set_mode((width, height))
 endGame = False
 column_max = 9
 row_max = 8
-column_choice = -1
+col_choice = -1
 while endGame == False:
     # events
 	for e in event.get():
 		if e.type == QUIT:	# get all events
 			endGame = True
-#		elif e.type == key_down:
-#			if e.key == k_1:
-#				print("key 1 pressed")
-#				column_choice = 0
-#			elif e.key == k_2:
-#				print("key 2 pressed")
-#				column_choice = 1
+		if e.type == KEYDOWN:
+			col_choice = -1
+			if e.key == k_1:
+				print("key 1 pressed")
+				col_choice = 0
+			elif e.key == k_2:
+				print("key 2 pressed")
+				col_choice = 1
+			elif e.key == k_3:
+				print("key 2 pressed")
+				col_choice = 2
+			elif e.key == k_4:
+				print("key 2 pressed")
+				col_choice = 3
+			elif e.key == k_5:
+				print("key 2 pressed")
+				col_choice = 4
+			elif e.key == k_6:
+				print("key 2 pressed")
+				col_choice = 5
+			elif e.key == k_7:
+				print("key 2 pressed")
+				col_choice = 6
+			elif e.key == k_8:
+				print("key 2 pressed")
+				col_choice = 7
+			elif e.key == k_9:
+				print("key 2 pressed")
+				col_choice = 8
+			elif e.key == k_10:
+				print("key 2 pressed")
+				col_choice = 9
+				
+			if col_choice != -1:
+				
+				
 				
 				
 				
@@ -70,6 +99,3 @@ while endGame == False:
 
 
 	display.flip()
-
-
-
