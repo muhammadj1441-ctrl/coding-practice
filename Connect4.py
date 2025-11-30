@@ -23,6 +23,7 @@ column_max = 9
 row_max = 8
 col_choice = -1
 current_row = 8
+current_player = "r"
 while endGame == False:
     # events
     for e in event.get():
@@ -62,16 +63,23 @@ while endGame == False:
                 col_choice = 9
 
             if col_choice != -1:
-                while current_row > 0:
+                while current_row > -1:
                     if board[current_row][col_choice] == "w":
-                        board[current_row][col_choice] = "r"
+                        board[current_row][col_choice] = current_player
                         current_row = -2
+
+                        if current_player == "r":
+                            current_player = "y"
+                        else:
+                            current_player = "r"
 
                         print(board[current_row][col_choice])
 
                     current_row = current_row - 1
                 current_row = 8
                 col_choice = -1
+
+                
 
 
 
@@ -103,3 +111,4 @@ while endGame == False:
         row = row + 1
 
     display.flip()
+
