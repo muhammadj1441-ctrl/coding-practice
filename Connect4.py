@@ -1,14 +1,13 @@
-board = [["r", "w", "y", "r", "r", "r", "w", "y", "y", "r"],
-		["w", "w", "y", "r", "y", "r", "y", "y", "w", "w"],
-		["r", "y", "y", "w", "r", "r", "w", "y", "w", "y"],
-		["w", "y", "y", "w", "r", "y", "w", "y", "y", "r"],
-		["r", "w", "w", "r", "r", "r", "y", "r", "r", "w"],
-		["w", "y", "y", "w", "w", "r", "r", "y", "w", "y"],
-		["y", "w", "y", "w", "r", "r", "w", "y", "y", "r"],
-		["y", "w", "y", "w", "y", "r", "w", "y", "w", "w"],
-		["w", "r", "y", "w", "r", "y", "w", "r", "y", "y"]]
-
-print(board[0][2])
+board = [["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
+         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
+         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
+         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
+         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
+         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
+         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
+         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
+         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"]]
+print(board[8][0])
 
 from pygame import *
 
@@ -23,79 +22,95 @@ endGame = False
 column_max = 9
 row_max = 8
 col_choice = -1
+current_row = 8
 while endGame == False:
     # events
-	for e in event.get():
-		if e.type == QUIT:	# get all events
-			endGame = True
-		if e.type == KEYDOWN:
-			col_choice = -1
-			if e.key == K_1:
-				print("key 1 pressed")
-				col_choice = 0
-			elif e.key == K_2:
-				print("key 2 pressed")
-				col_choice = 1
-			elif e.key == K_3:
-				print("key 3 pressed")
-				col_choice = 2
-			elif e.key == K_4:
-				print("key 4 pressed")
-				col_choice = 3
-			elif e.key == K_5:
-				print("key 5 pressed")
-				col_choice = 4
-			elif e.key == K_6:
-				print("key 6 pressed")
-				col_choice = 5
-			elif e.key == K_7:
-				print("key 7 pressed")
-				col_choice = 6
-			elif e.key == K_8:
-				print("key 8 pressed")
-				col_choice = 7
-			elif e.key == K_9:
-				print("key 9 pressed")
-				col_choice = 8
-			elif e.key == K_0:
-				print("key 10 pressed")
-				col_choice = 9
-				
-			#if col_choice != -1:
-				
-				
-				
-				
-				
-	screen.fill((0, 0, 0))  # tuple - RGB
-	draw.rect(screen, (0, 0, 255), (20, 20, 660, 600))
+    for e in event.get():
+        if e.type == QUIT:  # get all events
+            endGame = True
+        if e.type == KEYDOWN:
+            col_choice = -1
+            if e.key == K_1:
+                print("key 1 pressed")
+                col_choice = 0
+            elif e.key == K_2:
+                print("key 2 pressed")
+                col_choice = 1
+            elif e.key == K_3:
+                print("key 3 pressed")
+                col_choice = 2
+            elif e.key == K_4:
+                print("key 4 pressed")
+                col_choice = 3
+            elif e.key == K_5:
+                print("key 5 pressed")
+                col_choice = 4
+            elif e.key == K_6:
+                print("key 6 pressed")
+                col_choice = 5
+            elif e.key == K_7:
+                print("key 7 pressed")
+                col_choice = 6
+            elif e.key == K_8:
+                print("key 8 pressed")
+                col_choice = 7
+            elif e.key == K_9:
+                print("key 9 pressed")
+                col_choice = 8
+            elif e.key == K_0:
+                print("key 10 pressed")
+                col_choice = 9
 
-	y = 55
-	while y <= 55 + (65 * row_max):
-		x = 55
-		while x <= 55 + (65 * column_max):
-			draw.circle(screen, (255, 255, 255), (x, y), 30)
-			x = x + 65
-		y = y + 65
-		
+            if col_choice != -1:
+                while current_row > 0:
+                    if board[current_row][col_choice] == "w":
+                        board[current_row][col_choice] = "r"
+                        current_row = -2
 
+                        print(board[current_row][col_choice])
 
-	row = 0
-	while row < len(board):
-		col = 0
-		while col < len(board[row]):
-			cy = 55 + row * 65
-			cx = 55 + col * 65
+                    current_row = current_row - 1
+                current_row = 8
+                col_choice = -1
+
+                while current_row > 0:
+                    if board[current_row][col_choice] == "w":
+                        board[current_row][col_choice] = "y"
+                        current_row = -2
+
+                        print(board[current_row][col_choice])
+
+                    current_row = current_row - 1
+                current_row = 8
+                col_choice = -1
 
 
-			if board[row][col] == "r":
-				draw.circle(screen, (255, 0, 0), (cx, cy), 30)
-			elif board[row][col] == "y":
-				draw.circle(screen, (255, 255, 0), (cx, cy), 30)
-			elif board[row][col] == "w":
-				draw.circle(screen, (255, 255, 255), (cx, cy), 30)
-			col = col + 1
-		row = row + 1
 
+    screen.fill((0, 0, 0))  # tuple - RGB
+    draw.rect(screen, (0, 0, 255), (20, 20, 660, 600))
 
-	display.flip()
+    y = 55
+    while y <= 55 + (65 * row_max):
+        x = 55
+        while x <= 55 + (65 * column_max):
+            draw.circle(screen, (255, 255, 255), (x, y), 30)
+            x = x + 65
+        y = y + 65
+
+    row = 0
+    while row < len(board):
+        col = 0
+        while col < len(board[row]):
+            cy = 55 + row * 65
+            cx = 55 + col * 65
+
+            if board[row][col] == "r":
+                draw.circle(screen, (255, 0, 0), (cx, cy), 30)
+            elif board[row][col] == "y":
+                draw.circle(screen, (255, 255, 0), (cx, cy), 30)
+            elif board[row][col] == "w":
+                draw.circle(screen, (255, 255, 255), (cx, cy), 30)
+            col = col + 1
+        row = row + 1
+
+    display.flip()
