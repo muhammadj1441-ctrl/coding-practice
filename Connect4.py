@@ -73,17 +73,6 @@ while endGame == False:
                 current_row = 8
                 col_choice = -1
 
-                while current_row > 0:
-                    if board[current_row][col_choice] == "w":
-                        board[current_row][col_choice] = "y"
-                        current_row = -2
-
-                        print(board[current_row][col_choice])
-
-                    current_row = current_row - 1
-                current_row = 8
-                col_choice = -1
-
 
 
     screen.fill((0, 0, 0))  # tuple - RGB
