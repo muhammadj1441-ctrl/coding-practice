@@ -1,0 +1,17 @@
+def isprime(n):
+	numbertocheck = 2
+	while numbertocheck < n:
+		if n % numbertocheck == 0:
+			return False
+		numbertocheck = numbertocheck + 1
+	return True
+print(isprime(500))
+
+
+num = 2
+count = 0
+while count < 500:
+	if isprime(num):
+		print(num)
+		count = count + 1
+	num = num + 1
