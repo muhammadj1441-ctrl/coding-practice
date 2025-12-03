@@ -37,13 +37,13 @@ while endGame == False:
             elif e.key == K_2:
                 print("key 2 pressed")
                 col_choice = 1
-            elif e.key == K_3:
+        	elif e.key == K_3:
                 print("key 3 pressed")
                 col_choice = 2
             elif e.key == K_4:
                 print("key 4 pressed")
                 col_choice = 3
-            elif e.key == K_5:
+        	elif e.key == K_5:
                 print("key 5 pressed")
                 col_choice = 4
             elif e.key == K_6:
@@ -111,4 +111,5 @@ while endGame == False:
         row = row + 1
 
     display.flip()
+
 
