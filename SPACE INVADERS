@@ -1,0 +1,32 @@
+from pygame import *
+SPACE = [["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""]]
+init()
+
+width = 800
+height = 600
+
+screen = display.set_mode((width, height))
+
+class Invader:
+    def __init__(self,x,y):
+        SIZE = 40
+        self.img = image.load("invader.png")
+        self.img = transform.scale(self.img,(SIZE,SIZE))
+        self.rect = Rect(x,y,self.img.get_width(), self.img.get_height())
+    def draw(self, screen):
+        screen.blit(self.img, self.rect)
+
+endGame = False
+myFirstInvader = Invader(100,100) # create my invader
+
+while not endGame:
+    for e in event.get():
+        if e.type == QUIT:
+            endGame = True
+
+    myFirstInvader.draw(screen) # Draw Invader
+
+    display.flip()
