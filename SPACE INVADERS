@@ -18,7 +18,7 @@ class Invader:
         self.dx = 1 # direction
     def draw(self, screen):
         screen.blit(self.img, self.rect)
-    def update(self):
+	def update(self):
         global width, height
         # check boundries
         if self.rect.right + self.dx >= width or self.rect.left + self.dx <= 0:
