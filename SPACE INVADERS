@@ -50,6 +50,6 @@ while not endGame:
             i.draw(screen)
         display.flip()
 
-    myFirstInvader.draw(screen) # Draw Invader
+	myFirstInvader.draw(screen) # Draw Invader
 
-    display.flip()
+	display.flip()
