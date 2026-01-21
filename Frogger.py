@@ -38,8 +38,8 @@ class Log():
 log = Log()
 
 
-run = True
-while run:
+endgame = True
+while endgame:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
@@ -63,4 +63,5 @@ while run:
 
     pygame.display.flip()
     clock.tick(60)
+
 
