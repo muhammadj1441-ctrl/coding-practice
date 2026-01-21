@@ -12,18 +12,27 @@ FPS = 60
 class Invader:
     def __init__(self,x,y):
         SIZE = 50
-        self.img = image.load("invader.png")
+        self.img = image.load("Invader.png")
         self.img = transform.scale(self.img,(SIZE,SIZE))
         self.rect = Rect(x,y,self.img.get_width(), self.img.get_height())
         self.dx = 1 # direction
+
     def draw(self, screen):
         screen.blit(self.img, self.rect)
-	def update(self):
+
+    def update(self):
         global width, height
-        # check boundries
-        if self.rect.right + self.dx >= width or self.rect.left + self.dx <= 0:
-            self.dx = self.dx * -1
         self.rect.x += self.dx
+        # check boundries
+        if self.checkforcollisions():
+            self.changedirection()
+
+    def checkforcollisions(self):
+        return self.rect.right + self.dx >= width or self.rect.left + self.dx <= 0
+
+    def changedirection(self):
+        self.dx = self.dx * -1
+
 endGame = False
 myFirstInvader = Invader(100,100) # create my invader
 invaderList = []
@@ -41,15 +50,13 @@ while not endGame:
     for e in event.get():
         if e.type == QUIT:
             endGame = True
-        screen.fill((0,0,0))
-        myFirstInvader.draw(screen)
-        c.tick(FPS)
+    screen.fill((0,0,0))
+    c.tick(FPS)
 
-        for i in invaderList:
-            i.update()
-            i.draw(screen)
-        display.flip()
+    for i in invaderList:
+        i.update()
+        i.draw(screen)
 
-	myFirstInvader.draw(screen) # Draw Invader
+    myFirstInvader.draw(screen) # Draw Invader
 
-	display.flip()
+    display.flip()
