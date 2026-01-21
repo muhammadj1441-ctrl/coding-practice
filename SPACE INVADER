@@ -17,9 +17,9 @@ class Invader:
         self.rect = Rect(x,y,self.img.get_width(), self.img.get_height())
         self.dx = 1 # direction
 
+
     def draw(self, screen):
         screen.blit(self.img, self.rect)
-
     def update(self):
         global width, height
         self.rect.x += self.dx
@@ -28,12 +28,41 @@ class Invader:
             self.changedirection()
 
     def checkforcollisions(self):
-        return self.rect.right + self.dx >= width or self.rect.left + self.dx <= 0
+            return self.rect.right + self.dx >= width or self.rect.left + self.dx <= 0
 
     def changedirection(self):
         self.dx = self.dx * -1
 
+
+
+class InvaderGroup:
+    def __init__(self):
+        self.invaderList = []
+        for i in range(0, 10):
+            for j in range(0, 5):
+                x = 100 + (i * 50)
+                y = 100 + (j * 50)
+                self.invaderList.append(Invader(x, y))
+
+    def draw(self,screen):
+        for i in self.invaderList:
+            i.draw(screen)
+    def update(self):
+        global width, height
+        self.rect.x += self.dx
+        # check boundries
+        if self.checkforcollisions():
+            self.changedirection()
+
+    def checkforcollisions(self):
+            return self.rect.right + self.dx >= width or self.rect.left + self.dx <= 0
+
+    def changedirection(self):
+        self.dx = self.dx * -1
+
+
 endGame = False
+ig = InvaderGroup()
 myFirstInvader = Invader(100,100) # create my invader
 invaderList = []
 invaderList.append(myFirstInvader) # add the invader
@@ -46,6 +75,7 @@ while y <= 250:
         x = x + 50
     y = y + 50
 
+
 while not endGame:
     for e in event.get():
         if e.type == QUIT:
@@ -53,10 +83,11 @@ while not endGame:
     screen.fill((0,0,0))
     c.tick(FPS)
 
+    ig.draw(screen)
+
     for i in invaderList:
         i.update()
         i.draw(screen)
 
-    myFirstInvader.draw(screen) # Draw Invader
 
     display.flip()
