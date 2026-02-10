@@ -20,7 +20,7 @@ lives = 3
 level = 0
 
 
-
+#FROG
 class Frog():
     def __init__(self):
         self.img = pygame.image.load('Frog.png').convert_alpha()
@@ -35,7 +35,7 @@ class Frog():
 
 Character = Frog()
 
-
+#LOGS
 class Log():
     def __init__(self,x,y):
         self.img = pygame.image.load('Log.png').convert_alpha()
@@ -66,7 +66,7 @@ logs = [Log(0,100),
         ]
 
 
-
+#CARS
 class Car():
     def __init__(self,x,y):
         self.img = pygame.image.load('Car.png').convert_alpha()
@@ -90,7 +90,7 @@ cars = [Car(-80,360),
         Car(-600,360)]
 
 
-
+#GAME LOOP
 run = True
 while run:
     for event in pygame.event.get():
@@ -106,7 +106,7 @@ while run:
             elif event.key == pygame.K_d:
                 Character.rect.x += 20
 
-
+	
     screen.fill((0,0,0))
     pygame.draw.rect(screen,green,(0,480,800,120))
     pygame.draw.rect(screen,grey,(0,360,800,120))
@@ -115,6 +115,7 @@ while run:
     pygame.draw.rect(screen,green,(0,60,800,60))
     water_rect = pygame.Rect(0, 120, 800, 120)
 
+	#REACH END OF LEVEL DETECTION + ADJUST PER LEVEL
     if Character.rect.colliderect(goal_rect):
         score += 10
         Character.rect.topleft = (350, 500)
@@ -128,11 +129,7 @@ while run:
 
 
 
-    for log in logs:
-        log.update()
-        log.draw(screen)
 
-    Character.draw(screen)
 
     score_text = font.render(f"Score: {score}", True, (255, 0, 0))
     screen.blit(score_text, (10, 10))
@@ -145,10 +142,21 @@ while run:
     level_text = font.render(f"Level: {level}", True, (255, 255, 255))
     screen.blit(level_text, (10, 90))
 
+	#DRAW CHARACTER, LOGS, CARS
 
+	Character.draw(screen)
+
+	for log in logs:
+        log.update()
+        log.draw(screen)
+
+	
     for car in cars:
         car.update()
         car.draw(screen)
+
+
+	#COLLISONS
 
     for car in cars:
         if Character.rect.colliderect(car.rect):
@@ -174,4 +182,5 @@ while run:
 
     pygame.display.flip()
     clock.tick(60)
+
 
