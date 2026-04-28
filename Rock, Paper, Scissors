@@ -1,0 +1,49 @@
+# using object in another class
+from random import*
+class RPS_AI_Player:
+    def __init__(self, name):
+        self.__name = name
+        self.__choice = 0
+
+    def makeChoice(self):
+        random = randint(1, 3)
+        if random == 1:
+            self.__choice = "rock"
+        if random == 2:
+            self.__choice = "paper"
+        if random == 3:
+            self.__choice = "scissors"
+
+    def display(self):
+        print(self.__name, "chose", self.__choice)
+
+    def getName(self):
+        return self.__name
+    def getChoice(self):
+        return self.__choice
+
+    def battle(self,otherPlayer):
+
+        playerOneChoice = self.getChoice()
+        playerTwoChoice = otherPlayer.getChoice()
+
+        if playerOneChoice == playerTwoChoice:
+            print("draw!")
+            return True
+
+        if playerOneChoice == "paper" and playerTwoChoice == "rock" or playerOneChoice == "scissors" and playerTwoChoice == "paper" or playerOneChoice == "rock" and playerTwoChoice == "scissors":
+            print(self.__name, "won!")
+            return True
+
+
+        if playerOneChoice == "rock" and playerTwoChoice == "paper" or playerOneChoice == "paper" and playerTwoChoice == "scissors" or playerOneChoice == "scissors" and playerTwoChoice == "rock":
+            print(self.__name, "lost!")
+            return False
+
+p1 = RPS_AI_Player("Bob")
+p2 = RPS_AI_Player("Dave")
+p1.makeChoice()
+p1.display()
+p2.makeChoice()
+p2.display()
+p1.battle(p2)
