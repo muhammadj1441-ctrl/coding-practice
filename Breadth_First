@@ -1,0 +1,38 @@
+class Node:
+  def __init__(self,v):
+    self.children = []
+    self.value = v
+
+  def addChild(self,nodeToAdd):
+    self.children.append(nodeToAdd)
+
+  def getValue(self):
+    return self.value
+    
+  def displayChildren(self):
+    print(self.getValue())
+    for a in range(len(self.children)):
+      print(self.children[a].value)
+
+  def breadthFirst(root):
+    q = Queue()
+    q.enqueue(root)
+    while q.empty() == False:
+      head = q.dequeue()
+      children = head.getChildren()
+      for c in children:
+        q.enqueue(c)
+      print(head.getValue())
+      
+root = Node(20)
+A = Node(5)
+B = Node(10)
+C = Node(30)
+D = Node(60)
+E = Node(70)
+root.addChild(A)
+root.addChild(B)
+root.addChild(C)
+root.displayChildren()
+C.addChild(D)
+C.addChild(E)
