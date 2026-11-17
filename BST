@@ -1,0 +1,53 @@
+class Node:
+    def _init_(self,value):
+        self.__left = None
+        self.__Right = None
+        self.__Value = value
+
+    def getLeft(self):
+        return self .__left
+    def getRight(self):
+        return self.__right
+    def getValue(self):
+        return self.__Value
+    def setLeft(self,n):
+        self.__left = n
+    def setRight(self,n):
+        self .__Right = n
+
+class BST:
+    def _init_(self):
+        self.__root = None
+
+    def addValue(self, value):
+        temp = Node(value) # Call the constructor
+        if self.__root == None:
+            self.__root = temp
+            return True
+        else:
+            current = self.__root # start root
+            while current != None:
+                if current.getValue() <= value:
+                    if current.getLeft() == None:
+                        current.setLeft(temp)
+                        return True
+                    else:
+                        current = current.getLeft()
+                else:
+                    if current.getRight() == None:
+                        current.setRight(temp)
+                        return True
+                    else:
+                        current = current.getRight()
+            return False
+
+myTree = BST()
+myTree.addValue(16)
+myTree.addValue(5)
+myTree.addValue(25)
+myTree.addValue(2)
+myTree.addValue(20)
+myTree.addValue(29)
+myTree.addValue(17)
+myTree.addValue(23)
+myTree.addValue(27)
